@@ -1,0 +1,33 @@
+{
+    "drivers": [
+        {
+            "id": 1,
+            "name": "Joseph Rodriguez",
+            "company": "Marks & Spencer",
+            "lat": 51.514939,
+            "lon": -0.194954
+        },
+        {
+            "id": 2,
+            "name": "John Doe",
+            "company": "EAT Co.",
+            "lat": 51.500235, 
+            "lon": -0.151261
+        },
+        {
+            "id": 3,
+            "name": "Robert Herbert",
+            "company": "Pret a Manger",
+            "lat": 51.495428,
+            "lon": -0.126656
+        },
+        {
+            "id": 4,
+            "name": "Amanda Spencer",
+            "company": "Argos UK",
+            "lat": 51.509565,
+            "lon": -0.121970
+        }
+
+    ]
+}
