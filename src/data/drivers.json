@@ -1,5 +1,4 @@
-{
-    "drivers": [
+[
         {
             "id": 1,
             "name": "Joseph Rodriguez",
@@ -30,4 +29,3 @@
         }
 
     ]
-}
