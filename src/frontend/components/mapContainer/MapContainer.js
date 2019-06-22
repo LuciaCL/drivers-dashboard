@@ -1,6 +1,8 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import apiKey from '../../../data/apiKey';
+import truck from '../../images/truck-solid.svg';
+import box from '../../images/box-open-solid.svg';
 
 class MapContainer extends React.Component {
     
@@ -10,8 +12,18 @@ class MapContainer extends React.Component {
                 key={index} 
                 id={index} 
                 position={{ lat: driver.lat, lng: driver.lon}}
-                onClick={()=> alert('click')}/>
+                onClick={()=> alert('click')}
+                icon= {truck}
+                
+              />
         })
+    }
+    displayOrder = () => {
+      let order = this.props.currentOrder;
+      return <Marker 
+        position={{lat: order.lat, lng: order.lon}}
+        icon={box}
+        />
     }
     render() {
         const mapStyles = {
@@ -26,6 +38,8 @@ class MapContainer extends React.Component {
               initialCenter={{ lat: 51.501916, lng: -0.127037}}
             >
                 {this.displayDrivers()}
+                
+                {this.displayOrder()}
             </Map>
         );
       }

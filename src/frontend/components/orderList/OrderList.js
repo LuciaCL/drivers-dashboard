@@ -2,10 +2,7 @@ import React from "react";
 import Order from './Order';
 
 class OrderList extends React.Component {
-    constructor() {
-        super();
-        this.state = { orders: [] };
-    }
+    
     render() {
         let orders = this.props.orders;
         return (
@@ -13,7 +10,9 @@ class OrderList extends React.Component {
                 {orders.map(order => {
                 return (
                   <Order
+                    key={order.id}
                     order={order}
+                    findDrivers={this.props.findDrivers}
                   />
                 );
               })}

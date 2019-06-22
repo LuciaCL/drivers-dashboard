@@ -5,12 +5,25 @@ import OrderList from '../orderList/OrderList';
 import drivers from '../../../data/drivers';
 import orders from '../../../data/orders';
 
-function Main() {
-    return (
-        <div className="main">
-            <OrderList orders={orders}/>
-            <MapContainer drivers={drivers}/>
-        </div>
-    )
+class Main extends React.Component {
+    constructor(){
+        super();
+        this.state= {
+            currentOrder: {}
+        };
+        this.findDrivers= this.findDrivers.bind(this);
+    }
+    findDrivers= (lat, lon) => {
+        this.setState({currentOrder: {lat,lon}});
+    }
+    render() {
+        let currentOrder = this.state.currentOrder;
+        return (
+            <div className="main">
+                <OrderList orders={orders} findDrivers={this.findDrivers}/>
+                <MapContainer drivers={drivers} currentOrder={currentOrder}/>
+            </div>
+        )
+    }
 }
 export default Main

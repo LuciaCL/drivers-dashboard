@@ -11,7 +11,7 @@ class Order extends React.Component {
                     <p>Pickup time: {order.pickupTime}</p>
                     <p>Pickup address: {order.pickupAddress}</p>
                     <p>Package size: {order.packageSize}</p>
-                    <button>Find drivers</button>
+                    <button onClick={()=>this.props.findDrivers(order.lat,order.lon)}>Find drivers</button>
                 </div>
             </>
         )
