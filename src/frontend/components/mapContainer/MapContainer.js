@@ -6,6 +6,18 @@ import nearestTruck from '../../images/truck-close.svg';
 import box from '../../images/box-open-solid.svg';
 
 class MapContainer extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      shouldUpdate: false
+    }
+  }
+  componentDidUpdate(prevProps) {
+    if(this.props.currentOrder.lat !== prevProps.currentOrder.lat){
+      //should update
+      this.setState({shouldUpdate: true});
+    }
+  }
    rad(x) {return x*Math.PI/180;}
    findNearestDrivers(orderLat,orderLng){
       let drivers = this.props.drivers;
@@ -46,11 +58,12 @@ class MapContainer extends React.Component {
     displayNearestDriversTo = () => {
       let order = this.props.currentOrder;
       let nearestDrivers = this.findNearestDrivers(order.lat, order.lon);
-      console.log(nearestDrivers);
-      return <Marker 
-        position={{lat: nearestDrivers[0].driver.lat, lng: nearestDrivers[0].driver.lon}}
+      return nearestDrivers.slice(0,3).map((driver, index)=> {
+        return <Marker 
+        position={{lat: driver.driver.lat, lng: driver.driver.lon}}
         icon={nearestTruck}
         />
+      })
     }
     render() {
         const mapStyles = {
@@ -65,8 +78,8 @@ class MapContainer extends React.Component {
               initialCenter={{ lat: 51.501916, lng: -0.127037}}
             >
                 {this.displayDrivers()}
-                {this.displayOrder()}
-                {this.displayNearestDriversTo()}
+                { this.state.shouldUpdate ? this.displayOrder() : ''}  
+                {this.state.shouldUpdate ? this.displayNearestDriversTo() : ''}
             </Map>
         );
       }
