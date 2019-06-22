@@ -1,17 +1,11 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import apiKey from '../../../data/apiKey';
-import drivers from '../../../data/drivers.json';
 
 class MapContainer extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            drivers: drivers
-        }
-    }
+    
     displayDrivers = () => {
-        return this.state.drivers.map((driver, index) => {
+        return this.props.drivers.map((driver, index) => {
             return <Marker 
                 key={index} 
                 id={index} 
