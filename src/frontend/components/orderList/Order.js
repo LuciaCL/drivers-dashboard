@@ -7,11 +7,12 @@ class Order extends React.Component {
         return (
             <>
                 <div className='order'>
-                    <p>ID-{order.id}</p>
                     <p>Pickup time: {order.pickupTime}</p>
                     <p>Pickup address: {order.pickupAddress}</p>
                     <p>Package size: {order.packageSize}</p>
-                    <button onClick={()=>this.props.findDrivers(order.lat,order.lon)}>Find drivers</button>
+                    <button onClick={()=>this.props.findDrivers(order.lat,order.lon,order.id)}>
+                        Find drivers
+                    </button>
                 </div>
             </>
         )

@@ -11,10 +11,9 @@ class Main extends React.Component {
         this.state= {
             currentOrder: {}
         };
-        this.findDrivers= this.findDrivers.bind(this);
     }
-    findDrivers= (lat, lon) => {
-        this.setState({currentOrder: {lat,lon}});
+    findDrivers= (lat, lon, id) => {
+        this.setState({currentOrder: {lat, lon, id}});
     }
     render() {
         let currentOrder = this.state.currentOrder;
