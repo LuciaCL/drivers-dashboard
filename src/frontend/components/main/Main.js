@@ -20,7 +20,9 @@ class Main extends React.Component {
         return (
             <div className="main">
                 <OrderList orders={orders} findDrivers={this.findDrivers}/>
-                <MapContainer drivers={drivers} currentOrder={currentOrder}/>
+                <div className='mapWrapper'>
+                    <MapContainer drivers={drivers} currentOrder={currentOrder}/>
+                </div>
             </div>
         )
     }

@@ -5,6 +5,7 @@ import apiKey from '../../../data/apiKey';
 import truck from '../../images/truck-solid.svg';
 import nearestTruck from '../../images/truck-close.svg';
 import box from '../../images/box-open-solid.svg';
+import './MapContainer.css';
 
 class MapContainer extends React.Component {
   constructor(props) {
@@ -54,21 +55,19 @@ class MapContainer extends React.Component {
   }
 
   render() {
-    const mapStyles = {
-      width: '80%',
-      height: '80%',
-    };
     return (
-      <Map
-        google={this.props.google}
-        zoom={13}
-        style={mapStyles}
-        initialCenter={{ lat: 51.501916, lng: -0.127037 }}>
+      <div className='mapContainer'>
+        <Map
+          google={this.props.google}
+          zoom={13}
+          style={{width: '100%', height: '100%'}}
+          initialCenter={{ lat: 51.501916, lng: -0.127037 }}>
 
-        {this.displayDrivers()}
-        {this.state.shouldUpdate ? this.displayOrder() : ''}
-        {this.state.shouldUpdate ? this.displayNearestDriversTo() : ''}
-      </Map>
+          {this.displayDrivers()}
+          {this.state.shouldUpdate ? this.displayOrder() : ''}
+          {this.state.shouldUpdate ? this.displayNearestDriversTo() : ''}
+        </Map>
+      </div>
     );
   }
 }

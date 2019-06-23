@@ -1,6 +1,7 @@
-.order{
+.order {
     border:1px solid grey;
     padding: 2px;
     margin: 2px;
     border-radius: 5px;
+    font-size: 70%;
 }

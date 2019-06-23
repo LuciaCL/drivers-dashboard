@@ -5,7 +5,6 @@ class Order extends React.Component {
     render() {
         let order = this.props.order;
         return (
-            <>
                 <div className='order'>
                     <p>Pickup time: {order.pickupTime}</p>
                     <p>Pickup address: {order.pickupAddress}</p>
@@ -14,7 +13,6 @@ class Order extends React.Component {
                         Find drivers
                     </button>
                 </div>
-            </>
         )
     }
 }
