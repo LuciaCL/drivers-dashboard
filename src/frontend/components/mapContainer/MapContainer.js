@@ -28,7 +28,7 @@ class MapContainer extends React.Component {
         key={index}
         id={index}
         position={{ lat: driver.lat, lng: driver.lon }}
-        onClick={() => alert('click')}
+        // onClick={() => alert('click')}
         icon={truck}
 
       />

@@ -26,6 +26,27 @@
             "company": "Argos UK",
             "lat": 51.509565,
             "lon": -0.121970
+        },
+        {
+            "id": 5,
+            "name": "Williams",
+            "company": "Tesco UK",
+            "lat": 51.508461,
+            "lon": -0.147488
+        },
+        {
+            "id": 6,
+            "name": "Harry",
+            "company": "Sainsbury UK",
+            "lat": 51.516641,
+            "lon": -0.160189
+        },
+        {
+            "id": 7,
+            "name": "Tom",
+            "company": "Ocado UK",
+            "lat": 51.499286,
+            "lon": -0.179874
         }
 
     ]

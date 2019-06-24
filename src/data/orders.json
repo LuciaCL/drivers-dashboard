@@ -34,17 +34,17 @@
     {
         "id": 5,
         "pickupTime": "06-28-2019 15:00",
-        "pickupAddress": "Westbourne St, Bayswater",
+        "pickupAddress": "14 Wendower, South kensington",
         "packageSize": "33x25x78",
-        "lat": 51.511751,
-        "lon": -0.175391
+        "lat": 51.493553,
+        "lon": -0.175495
     },
     {
         "id": 6,
         "pickupTime": "06-29-2019 15:00",
-        "pickupAddress": "22 Moreton PI",
+        "pickupAddress": "22 Torrington PL",
         "packageSize": "33x25x78",
-        "lat": 51.489509,
-        "lon": -0.137742
+        "lat": 51.521784,
+        "lon": -0.134130
     }
 ]
